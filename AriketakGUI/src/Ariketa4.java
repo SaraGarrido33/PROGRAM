@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +17,7 @@ public class Ariketa4 extends javax.swing.JFrame {
      */
     public Ariketa4() {
         initComponents();
-        lista.setModel(new javax.swing.DefaultListModel()); //para inicializar la lista
+        lista.setModel(new javax.swing.DefaultListModel()); //para inicializar la lista SIEMPRE HAY QUE HACER
     }
 
     /**
@@ -36,6 +38,11 @@ public class Ariketa4 extends javax.swing.JFrame {
         radiobutonirakur = new javax.swing.JRadioButton();
         radiobutonirakuridaz = new javax.swing.JRadioButton();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,11 +69,53 @@ public class Ariketa4 extends javax.swing.JFrame {
 
         group1.add(radiobutonirakur);
         radiobutonirakur.setText("Irakurtzeko");
+        radiobutonirakur.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                radiobutonirakurItemStateChanged(evt);
+            }
+        });
 
         group1.add(radiobutonirakuridaz);
         radiobutonirakuridaz.setText("Irakur/Idazteko");
+        radiobutonirakuridaz.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                radiobutonirakuridazItemStateChanged(evt);
+            }
+        });
 
         jScrollBar1.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        jScrollBar1.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
+            public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
+                jScrollBar1AdjustmentValueChanged(evt);
+            }
+        });
+
+        jMenu1.setText("Aukerak");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("Testu_kaxa_kolorea");
+        jMenu1.add(jCheckBoxMenuItem1);
+
+        jCheckBoxMenuItem2.setSelected(true);
+        jCheckBoxMenuItem2.setText("Irten");
+        jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jCheckBoxMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Laguntza");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +158,7 @@ public class Ariketa4 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,6 +184,46 @@ public class Ariketa4 extends javax.swing.JFrame {
             textbox.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN,15));
         }
     }//GEN-LAST:event_checkboxkursibaItemStateChanged
+
+    private void radiobutonirakurItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radiobutonirakurItemStateChanged
+        // TODO add your handling code here:
+        if (radiobutonirakur.isSelected())
+        {
+            textbox.setEditable(false);
+        }
+        if (radiobutonirakuridaz.isSelected())
+        {
+            textbox.setEditable(true);
+        }
+    }//GEN-LAST:event_radiobutonirakurItemStateChanged
+
+    private void jScrollBar1AdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_jScrollBar1AdjustmentValueChanged
+        // TODO add your handling code here:
+        int n = jScrollBar1.getValue();
+        textbox.setForeground(new java.awt.Color(n,n,n));
+    }//GEN-LAST:event_jScrollBar1AdjustmentValueChanged
+
+    private void radiobutonirakuridazItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radiobutonirakuridazItemStateChanged
+        // TODO add your handling code here:
+        if (radiobutonirakur.isSelected())
+        {
+            textbox.setEditable(false);
+        }
+        if (radiobutonirakuridaz.isSelected())
+        {
+            textbox.setEditable(true);
+        }
+    }//GEN-LAST:event_radiobutonirakuridazItemStateChanged
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jCheckBoxMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,6 +264,11 @@ public class Ariketa4 extends javax.swing.JFrame {
     private javax.swing.JButton botonenter;
     private javax.swing.JCheckBox checkboxkursiba;
     private javax.swing.ButtonGroup group1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lista;
