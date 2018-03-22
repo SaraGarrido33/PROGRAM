@@ -198,14 +198,14 @@ public class CreateTeam extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DniCoach;
+    public javax.swing.JTextField DniCoach;
     private javax.swing.JButton Exit;
-    private javax.swing.JTextField NameTeam;
-    private javax.swing.JTextField NumOfPlayers;
+    public javax.swing.JTextField NameTeam;
+    public javax.swing.JTextField NumOfPlayers;
     private javax.swing.JLabel TextDniCoach;
     private javax.swing.JLabel TextName;
     private javax.swing.JLabel Textnumplayers;
-    private javax.swing.JButton create;
+    public javax.swing.JButton create;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables

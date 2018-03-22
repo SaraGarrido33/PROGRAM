@@ -5,16 +5,14 @@ import java.util.ArrayList;
 
 public class Team_methods {
     
-    public static void write_team() throws IOException
+    public static void write_team(Team te) throws IOException
     {
        // definimos con una variable el file
         File teamfile = new File("D:/team.txt");
         
         try
         {
-            // creamos un objeto nuevo
-            Team te = new Team();
-            
+
             // If the file doesn't exist, create a new ObjectOutputStream to write the header
             if(!teamfile.exists())
             {

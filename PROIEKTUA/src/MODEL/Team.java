@@ -8,10 +8,9 @@ public class Team implements Serializable{
     private String dni; //Seria el dnii del entrenador(relacion)
     
 public Team(){
-    setName();
-    setNumberofplayers();
-    setDni();
+    
 }
+
 public void printInfo(){
     getName(name);
     getNumberofplayers(numberofplayers);
