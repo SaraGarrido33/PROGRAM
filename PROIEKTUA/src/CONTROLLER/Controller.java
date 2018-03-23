@@ -32,22 +32,42 @@ public class Controller implements ActionListener{
         
         //Activar los listener
         c_t.create.addActionListener(this);
-        menu.Team.addActionListener(this);
+        menu.BotonTeam.addActionListener(this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==c_t.create) //Si le he dado en el boton create;
         {
+            //creamos el objeto vacio y lo rellenamos cogiendo la informacion de los textbox y metiendola al objeto
             Team te = new Team();
             te.setName(c_t.NameTeam.getText()); 
-            te.getNumberofplayers(c_t.NumOfPlayers.getText());
-        }
-         
-        
+            te.setNumberofplayers(Integer.parseInt(c_t.NumOfPlayers.getText()));
+            te.setDni(c_t.DniCoach.getText());
+            try
+            {
+            t_m.write_team(te);
+            System.out.println("Gordeta");
+            }
+            catch(Exception a)
+            {
             
+            }
         
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        //ponemos los textbox en blanco
+        c_t.NameTeam.setText(null);
+        c_t.NumOfPlayers.setText(null);
+        c_t.DniCoach.setText(null);
+        
+        }
+        else if (e.getSource()==menu.BotonTeam)//cuando le dan al boton team
+        {
+            c_t.setVisible(true); //para que se abrala ventana de crear el team
+        }
+        
+        
+        //To change body of generated methods, choose Tools | Templates.
     }
     
 }
