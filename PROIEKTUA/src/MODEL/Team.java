@@ -5,7 +5,7 @@ import java.io.*;
 public class Team implements Serializable{
     private String name;
     private int numberofplayers;
-    private String dni; //Seria el dnii del entrenador(relacion)
+    private String dni; //Seria el dni del entrenador(relacion)
     
 public Team(){
     
