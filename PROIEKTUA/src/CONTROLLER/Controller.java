@@ -20,8 +20,8 @@ public class Controller implements ActionListener{
     //añadir como atributo cada model y cada view
     Team t; //clase sinmas
     private Team_methods t_m = new Team_methods(); //clase que tiene los metodos
-    private Main menu;
-    private CreateTeam c_t;
+    private Main menu; //view del menu
+    private CreateTeam c_t; //view del crear team
     
     //Constructor
     public Controller(Team a, Team_methods b, Main c,CreateTeam d){
