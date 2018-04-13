@@ -44,14 +44,14 @@ public class Controller implements ActionListener{
             te.setNumberofplayers(Integer.parseInt(c_t.NumOfPlayers.getText()));
             te.setDni(c_t.DniCoach.getText());
             try
-            {
-            t_m.write_team(te);
-            System.out.println("Gordeta");
-            }
+                {
+                t_m.write_team(te);
+                System.out.println("Gordeta");
+                }
             catch(Exception a)
-            {
-            
-            }
+                {
+
+                }
         
         
         
