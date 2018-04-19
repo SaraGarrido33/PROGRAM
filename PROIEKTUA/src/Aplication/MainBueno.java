@@ -6,10 +6,15 @@
 package Aplication;
 
 import CONTROLLER.Controller;
+import MODEL.Person;
+import MODEL.Player;
+import MODEL.Player_methods;
 import MODEL.Team;
 import MODEL.Team_methods;
+import VIEW.CreatePlayer;
 import VIEW.CreateTeam;
 import VIEW.Main;
+import VIEW.ShowTeams;
 
 /**
  *
@@ -23,6 +28,11 @@ public class MainBueno {
     CreateTeam createteam;
     Main mainview;
     Controller control;
+    Person personclass;
+    Player playerclass;
+    Player_methods playermethods;
+    CreatePlayer createplayer;
+    ShowTeams showteams;
     
     public static void main(String[]args)
     {
@@ -31,11 +41,20 @@ public class MainBueno {
     }
     
     private void hasi(){
+        //por cada clase hay que añadir
         teamclass = new Team();
         teammethods = new Team_methods();
         createteam = new CreateTeam();
         mainview = new Main();
-        control = new Controller(teamclass,teammethods,mainview,createteam);
+        playerclass = new Player(false);
+        playermethods = new Player_methods();
+        createplayer = new CreatePlayer();
+        showteams = new ShowTeams();
+        
+        //hay que añadir al controller siempre todas las cosas nuevas
+        control = new Controller(teamclass,teammethods,mainview,createteam,personclass,playerclass,playermethods,createplayer,showteams);
+        
         mainview.setVisible(true);
+        
     }
 }

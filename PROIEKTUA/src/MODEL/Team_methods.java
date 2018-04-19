@@ -42,11 +42,12 @@ public class Team_methods {
             System.out.println("File not found.");
         }
     }
-    public static void show_team() throws IOException 
+    public static ArrayList <Team> show_team() throws IOException 
     {
-         // definimos con una variable el file
-        File teamfile = new File("D:/team.txt");
+         // definimos con una variable el file y el array
         
+        File teamfile = new File("D:/team.txt");
+        ArrayList <Team> alTeam = new ArrayList();
         try
         {
             FileInputStream read = new FileInputStream(teamfile);
@@ -57,8 +58,7 @@ public class Team_methods {
                 while(true)
                 {
                     Team te = (Team) readFile.readObject();
-                    te.printInfo();
-                    System.out.println();
+                    alTeam.add(te);
                 }
             }
             catch(EOFException eof)
@@ -75,6 +75,7 @@ public class Team_methods {
         {
             System.out.println("File not found.");
         }
+        return alTeam;
     }
     public static void search_team() throws IOException, ClassNotFoundException 
    {

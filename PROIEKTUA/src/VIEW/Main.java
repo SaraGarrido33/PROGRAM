@@ -28,6 +28,8 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         BotonTeam = new javax.swing.JButton();
+        BotonPlayer = new javax.swing.JButton();
+        showteamboton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,21 +40,34 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        BotonPlayer.setText("Player");
+
+        showteamboton.setText("Show teams");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(BotonTeam)
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(showteamboton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BotonTeam)
+                        .addGap(35, 35, 35)
+                        .addComponent(BotonPlayer)))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addComponent(BotonTeam)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonTeam)
+                    .addComponent(BotonPlayer))
+                .addGap(35, 35, 35)
+                .addComponent(showteamboton)
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         pack();
@@ -67,6 +82,8 @@ public class Main extends javax.swing.JFrame {
      */
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton BotonPlayer;
     public javax.swing.JButton BotonTeam;
+    public javax.swing.JButton showteamboton;
     // End of variables declaration//GEN-END:variables
 }
